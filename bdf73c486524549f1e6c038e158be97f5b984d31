@@ -1,0 +1,18 @@
+Revision: bdf73c486524549f1e6c038e158be97f5b984d31
+Patch-set: 1
+File: src/com/android/soundrecorder/SoundRecorder.java
+
+567
+Mon Apr 29 16:01:50 2013 +0000
+Author: Glenn Kasten <1004395@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: UQKLNHrQ
+Bytes: 70
+Do any of these 3 cursor. operations throw an exception? Which one(s)?
+
+572
+Mon Apr 29 16:01:50 2013 +0000
+Author: Glenn Kasten <1004395@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: UQALbKnA
+Bytes: 121
+I can see why the cursor.close() needs to be in an "if", but not why it needs to be in a "try" ... see previous question.
+
