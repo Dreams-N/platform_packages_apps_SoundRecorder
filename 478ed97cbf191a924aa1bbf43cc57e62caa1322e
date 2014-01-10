@@ -1,0 +1,26 @@
+Revision: 478ed97cbf191a924aa1bbf43cc57e62caa1322e
+Patch-set: 3
+File: src/com/android/soundrecorder/SoundRecorder.java
+
+573
+Fri Jan 10 23:26:52 2014 +0000
+Author: Marco Nelissen <1001525@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d38c95d_077d1a94
+Bytes: 150
+The part above looks OK to me. It's how it should be, however note that it now returns -1 after getting a null Cursor, which may cause problems below.
+
+638
+Fri Jan 10 23:26:52 2014 +0000
+Author: Marco Nelissen <1001525@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d3d554c_83736076
+Bytes: 267
+getPlaylistId() now returns -1 where there would previously have been an NPE, so this code now continues and tries to create the playlist.
+If that succeeds, then depending on why the query previously failed, there may now be more than one playlist with the same name.
+
+641
+Fri Jan 10 23:26:52 2014 +0000
+Author: Marco Nelissen <1001525@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d3d554c_0370b064
+Bytes: 198
+However if creating the playlist failed, then this next call to getPlaylistId() will likely fail also, so -1 will be passed to addToPlaylist(), which probably will cause an exception in that method.
+
