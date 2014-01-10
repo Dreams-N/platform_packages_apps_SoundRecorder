@@ -9,3 +9,11 @@ UUID: a7204092_d52adc7e
 Bytes: 63
 Those two lines can be collapsed to 'if (cursor.moveToFirst())'
 
+568
+Fri Jan 10 08:31:05 2014 +0000
+Author: Henrik Baard <1004424@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7204092_d52adc7e
+UUID: ede2251a_ef2d7db0
+Bytes: 45
+Yep, i'll upload a new patch after compiling.
+
